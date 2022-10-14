@@ -140,6 +140,7 @@ body {
   padding: 20px;
   height: 1000px;
   float: left;
+  width: 70%;
 }
 .edit {
   color: lightgreen;
@@ -354,6 +355,7 @@ body {
 .nav-inner {
   display: flex;
   padding: 1.25em 1em;
+  overflow: hidden;
 }
 .nav-bar {
   margin-top: 20px;
@@ -679,6 +681,12 @@ table {
 ::marker {
   display: none;
 }
+
+.admin-logout-btn {
+  float: right;
+  padding: 11px;
+}
+
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {

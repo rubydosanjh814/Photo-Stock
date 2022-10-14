@@ -41,8 +41,9 @@
  <title><?php echo $page_title.'_'.SITE_NAME?></title>
 
 <div class="top-bar"> 
-        <div class="top-inner"><h1>Photo Stock</h1> 
-<a href="logout.php"><button>logout</button></a></div></div>
+        <div class="top-inner"><div class="logo"><h1>Photo Stock</h1> </div>
+        <div class="admin-logout-btn">
+<a href="logout.php"><button class="fancy-btn">logout</button></a></div></div></div>
 <?php
 include("nav.php");
 ?>

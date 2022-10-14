@@ -70,7 +70,7 @@ $dd= count($cartArr);
      <input type="text" name="UserName"></input><br>
       <lable>Password</lable>
      <input style="width: 100% !important;" type="Password" name="PassWord"></input><br>
-     <input class="fancy-btn" name="btn-chkout-login" type="submit" value="Login">Login</input>&nbsp;
+     <input class="fancy-btn" name="btn-chkout-login" type="submit" value="Login"></input>&nbsp;
      <a href="Register.php"><button class="fancy-btn">Register</button></a>
      </form>
       </div>

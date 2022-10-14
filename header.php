@@ -127,9 +127,11 @@
   <a href="index.php"  class="active"><h1>Photo Stock</h1></a>
   <!-- Navigation links (hidden by default) -->
   <div id="myLinks">
-    <a href="creative">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    <a href="#creative">Creative</a>
+    <a href="#Editorial">Editorial</a>
+    <a href="#Videos">Videos</a>
+    <a href="#Music">Music</a>
+    <a href="#Blog">Blog</a>
   </div>
   <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
   <a href="javascript:void(0);" class="icon" onclick="myFunctionTopNav()">

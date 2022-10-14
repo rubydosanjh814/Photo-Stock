@@ -43,7 +43,7 @@ where pictures.category_id=category.id order by pictures.id desc";
 $result =mysqli_query($db,$sql);
 ?>
 <div class="admin_table_wrapper">
-<div><a href="manage-picture.php"><button>Add Pictures</button></a></div>
+<div><a href="manage-picture.php"><button class="fancy-btn">Add Pictures</button></a></div>
 <table>
     <thead>
     <tr>

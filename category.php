@@ -26,7 +26,7 @@ $sql = "Select * from category order by id";
 $result =mysqli_query($db,$sql);
 ?>
 <div class="admin_table_wrapper">
-<div><a href="manage_category.php"><button>Add Category</button></a></div>
+<div><a href="manage_category.php"><button class="fancy-btn">Add Category</button></a></div>
 <table>
     <thead>
     <tr>
