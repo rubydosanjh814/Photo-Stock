@@ -18,7 +18,7 @@
         <div class="intro">
              <div class="searh-wrapper"> 
                  <div class="home-title">                 
-                     <h1>Move the World</h1>
+                     <h1>Move the World!</h1>
                  </div>  
                 <div class="form-cover">
                     <form action="" method="post">
