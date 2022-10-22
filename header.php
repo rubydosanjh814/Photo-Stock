@@ -23,6 +23,7 @@
 </head>
 <?php
   $totalPrice=0;
+//////nav calls
 
 
   if(isset($_POST['update_cart'])){
@@ -115,9 +116,6 @@
 
 
 <body>
-<?php
- 
-?>
 
 <div class="mobile-nav">
     <div class="top-bar"> 
@@ -127,11 +125,13 @@
   <a href="index.php"  class="active"><h1>Photo Stock</h1></a>
   <!-- Navigation links (hidden by default) -->
   <div id="myLinks">
-    <a href="#creative">Creative</a>
-    <a href="#Editorial">Editorial</a>
-    <a href="#Videos">Videos</a>
-    <a href="#Music">Music</a>
-    <a href="#Blog">Blog</a>
+ <form method="post"><a><input type="submit" name="Creative" class="nav-button"  value = "Creative"/></a>
+                    <a><input type="submit" name="Editorial" class="nav-button"  value = "Editorial"/></a>
+                    <a><input type="submit" name="Music" class="nav-button"  value = "Music"/></a>
+                    <a><input type="submit" name="Vedios" class="nav-button"  value = "Vedios"/></a>
+                    <a><input type="submit" name="Blog" class="nav-button"  value = "Blog"/></a>
+                    <a><input type="submit" name="Collections" class="nav-button"  value = "Collections"/></a>
+                  </form>
   </div>
   <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
   <a href="javascript:void(0);" class="icon" onclick="myFunctionTopNav()">

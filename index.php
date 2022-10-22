@@ -14,6 +14,7 @@
       <script type="text/javascript" src="custom.js"></script>
  <link href="style.css" rel="stylesheet">
   </head>
+
     <div class="main">
         <div class="intro">
              <div class="searh-wrapper"> 
@@ -51,14 +52,17 @@
 
              <div class="nav-bar" style="margin-top:140px;"> 
                  <div class="nav-inner">
-                     <a href="#">Creative</a>
-                     <a href="#">Editorial</a>
+                    <form method="post"><a><input type="submit" name="Creative" class="nav-button"  value = "Creative"/></a>
+                    <a><input type="submit" name="Editorial" class="nav-button"  value = "Editorial"/></a>
+                    <a><input type="submit" name="Music" class="nav-button"  value = "Music"/></a>
+                    <a><input type="submit" name="Vedios" class="nav-button"  value = "Vedios"/></a>
+                    <a><input type="submit" name="Blog" class="nav-button"  value = "Blog"/></a>
+                    <a><input type="submit" name="Collections" class="nav-button"  value = "Collections"/></a>
+                     <!--<a href="#">Editorial</a>
                      <a href="#">Videos</a>
                      <a href="#">Music</a>
                      <a href="#">Blog</a>
-                     <a href="#">Collections</a>
-
-                     
+                     <a href="#">Collections</a>--></form>
                  </div>
              </div>
 
@@ -99,12 +103,41 @@ else{
     echo "No data found";
 }
 }
+elseif(isset($_POST["Creative"]))
+{
+   $sql23 = "select * from pictures where (category_id='1')";
+    getHomePageData($sql23);
+}
+elseif(isset($_POST["Editorial"]))
+{
+   $sql23 = "select * from pictures where (category_id='4')";
+    getHomePageData($sql23);
+}
+elseif(isset($_POST["Music"]))
+{
+   $sql23 = "select * from pictures where (category_id='9')";
+    getHomePageData($sql23);
+    
+}
+elseif(isset($_POST["Vedios"]))
+{
+   $sql23 = "select * from pictures where (category_id='10')";
+    getHomePageData($sql23);
+}
+elseif(isset($_POST["Blog"]))
+{
+    echo "Blog coming soon :)";
+}
+elseif(isset($_POST["Collections"]))
+{
+    echo "No collections yet.";
+}
  else{
     $sqll = "select * From pictures";
     getHomePageData($sqll);
  }
-    ?>
-       
+    ?> 
+   
 </div>
   </body>
   </html>

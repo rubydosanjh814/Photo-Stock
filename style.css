@@ -567,6 +567,17 @@ select:active select::selection {
 .show {
   display: block;
 }
+.nav-button {
+  background-color: #333;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+.nav-button:hover {
+  background-color: #333;
+}
+
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
@@ -627,11 +638,16 @@ select:active select::selection {
 }
 
 .topnav a {
-  color: white;
+  color: #04aa6d;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
   display: block;
+  background-color: #333;
+  text-align: center;
+}
+.topnav a:hover {
+  color: #04aa6d;
 }
 
 .topnav a.icon {
@@ -643,8 +659,8 @@ select:active select::selection {
 }
 
 .topnav a:hover {
-  background-color: #04aa6d;
-  color: black;
+  /* background-color: #04aa6d;*/
+  color: #04aa6d;
 }
 
 .active {
@@ -686,7 +702,9 @@ table {
   float: right;
   padding: 11px;
 }
-
+.nav-button:hover {
+  color: #04aa6d;
+}
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
@@ -737,8 +755,9 @@ table {
   }
 }
 
-@media only screen and (max-width: 2000px) {
-  .nav-inner {
+@media only screen and (max-width: 1019px) {
+  .nav-bar a {
+    padding-right: 72px;
   }
 }
 @media screen and (min-width: 1024px) {
