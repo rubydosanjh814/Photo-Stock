@@ -1,11 +1,10 @@
 <?php
- include('conn.php');
-
- $sql="select Pic_Id,pic_name,pic_price FROM pictures";
- $result = mysqli_query($db,$sql);
- $queryResult = mysqli_num_rows($result);
- $dir ="pics/";
- if($queryResult>0){
+include('conn.php');
+$sql="select Pic_Id,pic_name,pic_price FROM pictures";
+$result = mysqli_query($db,$sql);
+$queryResult = mysqli_num_rows($result);
+$dir ="pics/";
+if($queryResult>0){
      while($row=mysqli_fetch_assoc($result)){
      $imgId= $row['Pic_Id'];
      $imgName= $row['pic_name'];

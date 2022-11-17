@@ -50,7 +50,7 @@ h2 {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  font-family: monospace;
+  /*font-family: monospace;*/
 }
 
 .primary-btn {
@@ -73,7 +73,9 @@ button:hover,
 .top-bar h1 {
   display: inline;
 }
-
+.admin-ul-li ul {
+  padding-top: 9px;
+}
 .form-wraper {
   width: 55%;
   margin: auto;
@@ -81,14 +83,26 @@ button:hover,
 
 .form-wraper input[type="text"],
 input[type="file"],
-input[type="password"] {
+input[type="password"],
+textarea {
   width: 100% !important;
   line-height: 22px;
   margin-bottom: 15px;
 }
-
+.admin-main-div {
+  width: 80%;
+  float: left;
+}
 .form-wraper input[type="submit"] {
   border: #199d76;
+}
+
+.admin-ul-li ul li a {
+  color: white;
+}
+
+.admin-ul-li ul li a:hover {
+  color: #199d76;
 }
 
 .form-wraper input[type="textarea"] {
@@ -178,12 +192,12 @@ body {
   width: 300px;
 }
 .logo {
-  width: 24%;
+  width: 30%;
   padding: 20px;
   float: left;
 }
 .top-inner-left {
-  width: 73%;
+  width: 70%;
   float: left;
   text-align: right;
   padding: 20px;
@@ -229,8 +243,8 @@ body {
   text-align: right;
 }
 .logo a {
-  color: #20c997;
-  font-size: 20px;
+  color: white;
+  font-size: 30px;
   padding-right: 20px;
 }
 
@@ -240,7 +254,7 @@ body {
 
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: Lato, sans-serif;
 }
 
 .header {
@@ -435,6 +449,7 @@ a {
   position: absolute;
   right: 20px;
   top: 50%;
+  display: none;
 }
 
 .dropdown-list ul li::before {
@@ -468,7 +483,7 @@ a {
 .btn {
   background-color: white;
   width: 50px;
-  height: 100%;
+  /*height: 100%;*/
   border: 0;
   cursor: pointer;
   padding: 0px;
@@ -545,8 +560,8 @@ select:active select::selection {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  left: 81%;
-  top: 12%;
+  left: 82%;
+  top: 11%;
 }
 
 /* Links inside the dropdown */
@@ -705,6 +720,29 @@ table {
 .nav-button:hover {
   color: #04aa6d;
 }
+.stripe-button-el span {
+  background-color: #04aa6d !important;
+}
+#totalCartPic {
+  padding: 5px;
+  background-color: red;
+  border-radius: 15px;
+  top: 1%;
+  right: 1%;
+  position: absolute;
+}
+
+.select-cat::after {
+  color: #f39c12;
+}
+
+.footer {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+}
+
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
@@ -712,6 +750,19 @@ table {
     flex: 100%;
     max-width: 100%;
   }
+}
+
+.noSelect {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.noSelect:focus {
+  outline: none !important;
 }
 
 @media screen and (max-width: 685px) {
@@ -744,6 +795,15 @@ table {
     display: block;
   }
   #totalCartPic {
+    float: right;
+    padding: 5px;
+    border-radius: 15px;
+    position: absolute;
+    top: -24%;
+    right: 17%;
+    background-color: red;
+  }
+  .mobCartText {
     float: right;
   }
   .nav-bar {

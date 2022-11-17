@@ -1,8 +1,8 @@
 <?php
+include('conn.php');
+include('functions.inc.php');
 if(isset($_POST["btn-chkout-login"]))
 {
-    include('conn.php');
-    include('functions.inc.php');
     $UserName = $_POST['UserName'];
     $PassWord = $_POST['PassWord'];
   

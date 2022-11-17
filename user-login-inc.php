@@ -1,8 +1,8 @@
 <?php
+include('conn.php');
+include('functions.inc.php');
 if(isset($_POST["login-btn"]))
 {
-    include('conn.php');
-    include('functions.inc.php');
     $UserName = $_POST['UserName'];
     $PassWord = $_POST['PassWord'];
   
@@ -11,7 +11,6 @@ if(isset($_POST["login-btn"]))
     header("location: user-login.php?error=emptyInput");
    // $msg ="Please fill all fields.";
    // redirect('login.php');
-    
     exit();
     }
     else

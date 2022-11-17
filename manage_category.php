@@ -1,5 +1,3 @@
-
-<body>
 <?php
 include("top.php");
 $msg="";
@@ -43,11 +41,9 @@ else{
 redirect('category.php');
 }
 }
-
-
-
 ?>
-<div style="margin-left:25%;padding:63px 16px;height:1000px;">
+<body>
+<div class="admin-main-div">
 <div class="form-wraper">  
 <form action="" method="POST">
        <h2>Add Category</h2>
@@ -59,13 +55,11 @@ redirect('category.php');
              <div>
               <lable> Order Number:</lable><br>
                <input type="text" name="order-no" value="<?php echo $order_number ?>">
-            </div> 
-            
-               
+            </div>               
     <div><input  class="primary-btn" type ="submit" value="Add" name ="add"></button> </div>
-               </form>
+</form>
 </div>
-               <?php
+<?php
 if(isset($_GET['error']))
 {
     if($_GET['error']=="uploadfailed")
@@ -79,7 +73,6 @@ if(isset($_GET['error']))
     }
 }
 ?>
-
 </div>
 <?php
 include("footer.php");

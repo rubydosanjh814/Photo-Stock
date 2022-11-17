@@ -63,6 +63,7 @@ function myFunctionTopNav() {
 }
 
 // test orange achademy
+/*
 for (let x = 0; x < 100; x++) {
   if (x < 10) {
     for (let y = 5; y > 0; y--) {
@@ -87,3 +88,4 @@ function ImCalling(noOfTimesToCall) {
 }
 
 ImCalling(5);
+*/

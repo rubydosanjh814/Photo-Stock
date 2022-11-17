@@ -4,7 +4,6 @@
 <?php
 include("top.php");
 //include("constant.inc.php");
-
 $msg="";
 $category_id ="";
 $pic_name="";
@@ -130,18 +129,8 @@ if(isset($_POST['add'])){
           else{
           mysqli_query($db,"insert into picture_size_detail(id,pic_id,attribute,price,added_on) values('','$id','$attribute','$price','$uploaded_on')");
           }
-
-
        
   }
-
-
-
-
-
-
-
-
       redirect('picture.php');
       }
     }
@@ -151,7 +140,7 @@ if(isset($_POST['add'])){
 $res_category=mysqli_query($db,"select * from category where status='1' order by category asc");
 
 ?>
-<div style="margin-left:25%;padding:63px 16px;height:1000px;">
+<div class="admin-main-div">
 <div class="form-wraper">  
 <form action="" method="POST" enctype="multipart/form-data"> 
        <h2>Add Picture</h2>
@@ -240,7 +229,7 @@ $res_category=mysqli_query($db,"select * from category where status='1' order by
            
 
                
-    <div style="width:100%;float:left;"><button  class="primary-btn" type ="submit" value="Add" name ="add">Submit</button>
+    <div style="width:100%;float:left;"><button style="float:left;margin-right:2px;" class="primary-btn" type ="submit" value="Add" name ="add">Submit</button>
     <button  class="primary-btn" type ="button" onclick="add_more();">Add More</button>
   
   </div>

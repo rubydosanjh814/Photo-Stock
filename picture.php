@@ -3,7 +3,6 @@ include("top.php");
 //include("constant.inc.php");
 //(SERVER_PIC_IMAGE);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +13,7 @@ include("top.php");
         
     </title>-->
 </head>
-
 <body>
-
 <?php
 if(isset($_GET['type']) && $_GET['type'] !=='' && isset($_GET['id']) && $_GET['id']>0){
 
@@ -44,6 +41,7 @@ $result =mysqli_query($db,$sql);
 ?>
 <div class="admin_table_wrapper">
 <div><a href="manage-picture.php"><button class="fancy-btn">Add Pictures</button></a></div>
+<div class="table-wrapper">
 <table>
     <thead>
     <tr>
@@ -100,6 +98,7 @@ $result =mysqli_query($db,$sql);
     <?php } ?>
 </tbody>
 </table>
+       </div>
 </div>
 
 </div>

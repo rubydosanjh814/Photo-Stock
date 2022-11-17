@@ -1,7 +1,7 @@
 <?php
- include("header.php");
+include("header.php");
 ?>
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
     <head>
     <body>
@@ -9,12 +9,14 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
-   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script type="text/javascript" src="custom.js"></script>
+      <script type="text/javascript" src="custom.js"></script> 
+      <script src="lightbox-plus-jquery.js"></script>  
+    <link href="lightbox.css" rel="stylesheet" />
+      <script src="lightbox.js"></script>
  <link href="style.css" rel="stylesheet">
   </head>
-
     <div class="main">
         <div class="intro">
              <div class="searh-wrapper"> 
@@ -24,16 +26,15 @@
                 <div class="form-cover">
                     <form action="" method="post">
                         <div class="select-cat">
-                         <select name="catergory">
+                         <select class="noSelect" name="catergory">
                             <option value="">Select Filter</option>
                          <?php
                          $sqlcategory="select * from category";
                          $rescategory=mysqli_query($db,$sqlcategory);
                          //$rescategory=mysqli_num_rows($rescategory);
                          while($rowcat=mysqli_fetch_assoc($rescategory)){
-
                          ?>      
-                            <option value="<?php echo $rowcat['category'] ?>"><?php echo $rowcat['category'] ?> </option>
+                            <option  value="<?php echo $rowcat['category'] ?>"><?php echo $rowcat['category'] ?> </option>
                         <?php
                          }
                          ?>
@@ -41,16 +42,14 @@
                         </div>
                          <div class="search-wrapper-inner">
                          <input type="text" name="searchTag" placeholder="| Search best pictures for your project needs">
-                        </div>
-                         
+                        </div>                
                          <div class="btn-wrapper-inner">
                          <button  class="btn" name="submit" type="submit"><i class="fas fa-search"></i></button>
                          </div>
                     </form>  
                 </div>
              </div>
-
-             <div class="nav-bar" style="margin-top:140px;"> 
+             <div class="nav-bar" style="margin-top:135px;"> 
                  <div class="nav-inner">
                     <form method="post"><a><input type="submit" name="Creative" class="nav-button"  value = "Creative"/></a>
                     <a><input type="submit" name="Editorial" class="nav-button"  value = "Editorial"/></a>
@@ -136,8 +135,10 @@ elseif(isset($_POST["Collections"]))
     $sqll = "select * From pictures";
     getHomePageData($sqll);
  }
-    ?> 
-   
+    ?>   
 </div>
+<?php
+include("footer.php");
+?>
   </body>
   </html>

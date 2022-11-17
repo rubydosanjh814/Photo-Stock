@@ -1,9 +1,7 @@
-
-
-<body>
 <?php
 include("top.php");
 ?>
+<body>
 <div style="margin-left:25%;padding:63px 16px;height:1000px;">
 <div class="form-wraper">  
 <form action="img-upload-inc.php" method="POST"  enctype = "multipart/form-data">

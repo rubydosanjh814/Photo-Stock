@@ -1,7 +1,7 @@
 <?php
-  include("conn.php");
-    include("functions.inc.php");
-    include("constant.inc.php");
+include("conn.php");
+include("functions.inc.php");
+include("constant.inc.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,13 +38,8 @@
             <div class="search">
                 <input type="text" class="search-input" placeholder="Search for best photos">
             </div>
-
             <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-
         </div>
-
     </div>
-    
-    
 </body>
 </html>

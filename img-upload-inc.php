@@ -1,19 +1,13 @@
 <?php
-
 include('conn.php');
-
-
 if(isset($_POST['upload']))
 {
-
     $file =$_FILES['file'];
     $filename = $_FILES['file']['name'];
     $fileTmpName = $_FILES['file']['tmp_name'];
     $fileSize = $_FILES['file']['size'];
     $fileError = $_FILES['file']['error'];
     $fileType = $_FILES['file']['type'];
-
-
     $fileExt= explode('.', $filename);
     $fileActualExt  = strtolower(end($fileExt));
     $allowed= array('jpg','jpeg','png','pdf');
@@ -51,8 +45,6 @@ if(isset($_POST['upload']))
   else{
      header("Location: ./img-upload.php?error=uploadfailed");
     }
-
-
 /*echo "<h1>Diagnostic Info: </h1>";
 echo "<br>Temp File Name: ".$fileTmpName."<br>";
 echo "savefile variable valuable:".$saveFile;*/

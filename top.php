@@ -1,15 +1,15 @@
- <?php
-         session_start();
-         include("conn.php");
-         include("functions.inc.php");
-         include("constant.inc.php");
+<?php
+session_start();
+include("conn.php");
+include("functions.inc.php");
+include("constant.inc.php");
 
-        $curStr=$_SERVER['REQUEST_URI'];
-        $curArr=explode('/',$curStr);
-        $cur_path=$curArr[count($curArr)-1];
+$curStr=$_SERVER['REQUEST_URI'];
+$curArr=explode('/',$curStr);
+$cur_path=$curArr[count($curArr)-1];
 
 
-         if(!isset($_SESSION['userUsername'])){
+ if(!isset($_SESSION['userUsername'])){
          header("location: user-login.php");
          }
         

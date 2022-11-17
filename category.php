@@ -1,7 +1,5 @@
-<body>
 <?php
 include("top.php");
-
 if(isset($_GET['type']) && $_GET['type'] !=='' && isset($_GET['id']) && $_GET['id']>0){
 
   $type = $_GET['type'];
@@ -18,15 +16,16 @@ if($type=='deactive'){
 }
 mysqli_query($db,"update category set status='$status' where id ='$id'");
 redirect('category.php');
-
 }
 }
 
 $sql = "Select * from category order by id";
 $result =mysqli_query($db,$sql);
 ?>
+<body>
 <div class="admin_table_wrapper">
 <div><a href="manage_category.php"><button class="fancy-btn">Add Category</button></a></div>
+<div class="table-wrapper">
 <table>
     <thead>
     <tr>
@@ -55,14 +54,10 @@ $result =mysqli_query($db,$sql);
         }else{
             ?>
            <a href="?id=<?php echo $row['id']?>&type=active">Active</a>&nbsp;
-            <?php
+        <?php
         }
-        
-        
-        ?>
-            
+        ?>     
             <a href="?id=<?php echo $row['id']?>&type=delete">Delete</a>&nbsp;
-
         </td>
     </tr>
     <?php
@@ -74,12 +69,8 @@ $result =mysqli_query($db,$sql);
     <?php } ?>
 </tbody>
 </table>
-
-
-
-
 </div>
-
+</div>
 </div>
 <?php
 include("footer.php");

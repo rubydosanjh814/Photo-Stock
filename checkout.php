@@ -1,6 +1,7 @@
- <?php
- session_start();
- include("header.php");
+<?php
+session_start();
+include("header.php");
+require('config.php');
  
 $cartArr=getUserFullCart();
 
@@ -38,7 +39,7 @@ $dd= count($cartArr);
     
      $sql="insert into order_master(user_id,name,email,mobile,address,zipcode,total_price,order_status,payment_status,added_on) values('".$_SESSION['CustomerId']."','$checkout_name','$checkout_email','$checkout_mobile','$checkout_address','$checkout_zipcode','$totalPrice','1','pending','$added_on')";
      
-    // mysqli_query($db,$sql);
+    //mysqli_query($db,$sql);
     //$insert_id=mysql_insert_id($db);
     $last_id="";
    if ($db->query($sql) === TRUE) {
@@ -55,8 +56,8 @@ $dd= count($cartArr);
       $qty1=$list['qty'];
     mysqli_query($db,"insert into order_detail(order_id,pic_detail_id,price,qty) values('$id1','$pic_id1','$price1','$qty1')");
     } 
-    emptyCart();
-    echo "<script>window.location.href='success.php';</script>";
+  //  emptyCart();
+ echo "<script>window.location.href='confirm-order.php';</script>";
     exit;
   }
      ?>
@@ -77,7 +78,7 @@ $dd= count($cartArr);
       <div><button class="checkout-btn" onclick="checkFunction1()">Other Information</button>
     
       <div id ="<?php echo $is_final_show ?>" class="form-wraper <?php echo $is_second_box ?>">
-     <form method="post" action="">
+      <form method="post" action="">
          <lable>First Name</lable>
      <input type="text" value="<?php echo $userArr['name'] ?>" name="checkout_name" required></input><br>
 
@@ -92,13 +93,12 @@ $dd= count($cartArr);
 
        <lable>Address</lable><br>
      <input type="textarea" name="checkout_address" required></input><br>
-
-     <input class="fancy-btn" type="submit"  name="place_order" value="Place Order"></input>&nbsp;
+     
+     <input class="fancy-btn" type="submit"  name="place_order" value="Continue Checkout"></input>&nbsp;
      </form>
-
       </div>
     </div>
- </div> 
+    </div> 
     </div>
 
   <div style="width: 20%;float: right;"id="myDropdown1" class="dropdown-content1">

@@ -1,3 +1,7 @@
+<?php
+error_reporting(0);
+include("conn.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +21,6 @@
              </div>
         </div>    
         <?php
-        error_reporting(0);
-         include("conn.php");
            $SearchTags = mysqli_real_escape_string($db,$_POST['searchTag']);
            $sql="select Pic_Id,pic_name,pic_description,pic_tags FROM pictures Where pic_tags Like'%$SearchTags%'";
            $result = mysqli_query($db,$sql);
@@ -41,7 +43,6 @@
            {
                echo "No results";
            }
-    
         ?>
 
 </body>

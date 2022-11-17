@@ -1,6 +1,4 @@
- <?php
- 
-        
+<?php
 function pr($arr){
 	echo '<pre>';
 	print_r($arr);
@@ -124,16 +122,17 @@ function getUserDetailByid(){
    $data['name']='';
    $data['email']='';
    $data['mobile']='';
+   $data['address']='';
    if(isset($_SESSION['CustomerId'])){  
    $row=mysqli_fetch_assoc(mysqli_query($db,"select * from user where id=".$_SESSION['CustomerId']));
    $data['name']=$row['Name'];
    $data['email']=$row['Email'];
    $data['mobile']=$row['MobileNumber'];
+   $data['address']=$row['Address'];
   }
   return $data;
 }
 ?>
-
 
 <?php
 function getHomePageData($sqll){
@@ -146,14 +145,15 @@ function getHomePageData($sqll){
        
            if($queryResult1>0)
            {
-            
+            $cuybt=1;
             while($row=mysqli_fetch_assoc($result1))
             {
+              $cuybt+=1;
                   $imgName1 = $row['pic_name'];
                   $pictureId=$row['id'];
                   echo  "<div class='gallery-container'>
                   <div class='image'>
-                  <img src='".$imgSrc.$imgName1."' style='width:100%;' alt=''>
+                <a data-lightbox='image".$cuybt."' href='".$imgSrc.$imgName1."' ><img src='".$imgSrc.$imgName1."' style='width:100%;' alt=''></a>
                   </div>
                   <div class='text'>";
                   $pic_detail= "select * From picture_size_detail where pic_id= '$pictureId'"; 
@@ -167,7 +167,7 @@ function getHomePageData($sqll){
                          echo "<input type='radio' class='pic_radio' name='radio_".$row['id']."' id='radio_".$row['id']."' value='".$row['id']."'/>";
                          echo $row_result['attribute']; 
                          echo "  ";
-                         echo "<span class-'price'>".$row_result['price']."</span>";
+                         echo "<span class-'price'>$".$row_result['price']."/-</span>";
                          $added_mag="";
                          //$cartArr=getUserCart();//i added
                            if(array_key_exists($row_result['pic_id'],$cartArr)){
@@ -178,8 +178,9 @@ function getHomePageData($sqll){
                         }
                       }                     
                       ?>
-              <select id="qty<?php echo $row['id'];?>">
-              <option value="0">Qty</option>
+              <!--hide the select bcz i dont need qty more than 1 -->
+              <select hidden id="qty<?php echo $row['id'];?>">
+              <option value="1"></option>
               <?php
               for($i=1;$i<=5;$i++)
               echo "<option>$i</option>";

@@ -1,4 +1,10 @@
-  <!DOCTYPE html>
+<?php
+session_start();
+include("conn.php");
+include("functions.inc.php");
+include("constant.inc.php");
+?>
+<!DOCTYPE html>
  <html lang="en">
  <head>
           <body> 
@@ -10,12 +16,6 @@
          <script type="text/javascript" src="custom.js"></script>
          <title>Document</title>
  </head>
-  <?php
-  session_start();
-         include("conn.php");
-         include("functions.inc.php");
-        include("constant.inc.php");
-        ?>
  </body>
  </html>
         <?php

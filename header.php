@@ -1,13 +1,13 @@
+<?php
+error_reporting(0);
+session_start();
+include("conn.php");
+include("functions.inc.php");
+include("constant.inc.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <body>
-  <?php
-  error_reporting(0);
-  session_start();
-  include("conn.php");
-  include("functions.inc.php");
-  include("constant.inc.php");
-  ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
     
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script type="text/javascript" src="custom.js"></script>
      <link href="style.css" rel="stylesheet">
@@ -61,10 +61,10 @@
                      <div class="top-inner-left">
                       <?php
                       if(isset($_SESSION['userUsername'])){
-                       echo '<a href="user-logout.php">logout</a>';
+                       echo '<a href="user-logout.php">Logout</a>';
                       }
                       else{
-                         echo '<a href="user-login.php">Login Or Register</a>';
+                         echo '<a href="user-login.php">Login/Register</a>';
                       }
                       ?>
                         
@@ -74,9 +74,9 @@
                     </div>
                        <span id="totalPrice"><?php 
                        if($totalPrice!=0){
-                       echo $totalPrice.'/- INR';} ?> </span><button onclick="myFunction()" class="dropbtn"> Cart </button><span id="totalCartPic"><?php echo $totalCartPic ?></span>
+                       /* echo'$' .$totalPrice.'/- CAD';*/ }?> </span><button onclick="myFunction()" class="dropbtn"> Cart </button><span id="totalCartPic"><?php echo $totalCartPic ?></span>
                     <?php
-                    if($totalPrice!=0){
+                    if($totalPrice!=0){ 
                       ?>
   <div id="myDropdown" class="dropdown-content">
     <ol>
@@ -141,10 +141,10 @@
                      <div class="top-inner-left">
                       <?php
                       if(isset($_SESSION['userUsername'])){
-                       echo '<a href="user-logout.php">logout</a>';
+                       echo '<a href="user-logout.php">Logout</a>';
                       }
                       else{
-                         echo '<a href="user-login.php">Login/Register</a>';
+                         echo '<a style="float:left;"href="user-login.php">Login/Register</a>';
                       }
                       ?>
                         
@@ -154,10 +154,8 @@
                     </div>
                        <span id="totalPrice"><?php 
                        if($totalPrice!=0){
-                       /*echo $totalPrice.'/- INR';*/} ?> </span><span id="totalCartPic"><a class="cart-text-span" href="cart.php">Cart(<?php echo $totalCartPic ?>)</a></span>
-                  
-                 
-
+                       /*echo $totalPrice.'/- INR';*/} ?></span><span style="float:right;position:relative;"><a style="float:right;" class="cart-text-span" href="cart.php">
+                        <button class="fancy-btn">Cart</button></a><span id="totalCartPic"><?php echo $totalCartPic ?></span></span>
   <?php
                     
   ?>
@@ -167,18 +165,6 @@
     <?php
               
     ?>
-    <script>
-  
-
-  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-</body>
-</html>
+<input type="hidden"  id="qty" value="<?php echo $row['id']?>" >
